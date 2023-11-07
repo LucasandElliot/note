@@ -5,14 +5,14 @@
 
 1.  git config --globaluser.name"LucasandElliot"
 
-2. git config --globaluser.email"1530575924@qq.com"
+2. git config --globaluser.email"xxxxxx@xx.com"
 
 ##  设置SSH key钥匙
 检查是否已经生成密钥
 1. cd ~/.ssh
 如果返回了三个文件证明已经生成了密钥
 如果没有密钥，即为输入以下命令
-1. ssh-keygen -t rsa -C"1530575924@qq.com"
+1. ssh-keygen -t rsa -C "xxxxxx@xx.com"
 随后直接回车即可，即为默认路径以及默认没有密码登录
 查看 SSH key的输出，复制输出到剪贴板，随后打开github的setting，检索是否有SSH，随后创建即可
 1. cat ~/.ssh/id_rsa.pub
