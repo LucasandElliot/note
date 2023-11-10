@@ -37,6 +37,6 @@
 1. git remote set-url orgin <your_remote_url>
 ## 添加远程仓库
 1. git remote add orgin 项目地址(url.git 或者是git.git)
-
-
+## git查看回退历史记录
+参考：https://blog.csdn.net/jacke121/article/details/54565222
 
