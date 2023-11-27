@@ -23,7 +23,7 @@ X = FOREACH A GENERATE $0（第一列）, (
 
 A.quiz1的原因：是因为B是由A来的，所以B里面的数据是A中数据，而且B中无列
 
-![image-20231110101631202](https://cdn.jsdelivr.net/gh/LucasandElliot/note/big_data/src/202311101016253.png)
+![202311101016253](src/202311101016253.png)
 
 ```
 C = foreach B generate group(column_name), sum(A.quiz1)

@@ -22,7 +22,7 @@
 
    HDFS是按照固定block为基本单位存储，因此，处理单位为split（包含元数据，数据长度，节点位置等，起始信息）用户自定义，与HDFS的block无一定关系
 
-  -  ![image-20231117102948719](https://cdn.jsdelivr.net/gh/LucasandElliot/note/big_data/src/202311171029755.png)
+  -  ![image-20231127161527722](src/image-20231127161527722.png)
 
 3. Map
 
@@ -36,13 +36,13 @@
 
    （合并为加法，归并为整合，但不想加）
 
-    - ![image-20231117103540886](https://cdn.jsdelivr.net/gh/LucasandElliot/note/big_data/src/202311171035922.png)
+    - ![image-20231127160958323](src/image-20231127160958323.png)
 
-    - ![image-20231117103549800](https://cdn.jsdelivr.net/gh/LucasandElliot/note/big_data/src/202311171035837.png)
+    - ![image-20231127161011368](src/image-20231127161011368.png)
 
 5. Reduce
 
- - ![image-20231117102802361](https://cdn.jsdelivr.net/gh/LucasandElliot/note/big_data/src/202311171028404.png)
+ - ![image-20231127161027124](src/image-20231127161027124.png)
 
 ### MapReduce应用
 
@@ -154,50 +154,3 @@ cd /usr/local/hadoop
 
 ```
 
-## Hive
-
-### Hive简介
-
-构建于Hadoop顶层的数据仓库工具。本身不存储和处理数据，依赖于HDFS存储数据，依赖分布式并行文件系统MapReduce处理数据，主要是定义了HiveSQL（类似于SQL）查询语言，通过编写HiveSQL运行MapReduce任务，具有较多数据类型
-
-#### 特点
-
-- 支持批处理方式处理海量数据
-- 支持对数据加载转化，可以查询，存储，分析大规模数据
-- 处理静态数据，能够与Hbase互补（hbase能够提供实时访问功能）
-- 不支持数据更新，支持分区以及索引
-- 图示
-  - ![image-20231117114310070](https://cdn.jsdelivr.net/gh/LucasandElliot/note/big_data/src/202311171143104.png)
-
-#### 优势
-
-- 在数据插入志宏，支持批量传入数据，为全表扫描
-- 不支持数据更新，Hive存放静态数据
-- 提供有限的索引
-
-## Hive系统架构
-
-- 用户接口模块
-
-  包括CLI, HWJ, JDBC, ODBC, Thirft Sever，CLI为自带命令行界面， HWI为简单网页界面，JDBC，ODBC和Thrift Server是向用户提供编程访问的接口
-
-- 驱动模块
-
-  包括编译器，优化器，执行器，所有指令都会进入到驱动模块，按照步骤执行
-
-  编译器为Antlr语言识别工具，将SQL转化为抽象语法树（AST tre），遍历为QueryBlock查询单元（包含输入源，计算过程，输出部分）
-
-- 元数据存储模块
-
-  独立关系型数据库，也可以为MYSQL连接，也可以为自带Derby数据库，保存表名称，表列以及属性，表的分区以及属性，表的数据所在位置信息
-
-- 图示
-
-  - ![image-20231117115109734](https://cdn.jsdelivr.net/gh/LucasandElliot/note/big_data/src/202311171151767.png)
-
-### 查询执行过程
-
-1. 用CLI输入命令
-2. 编译器Antlr语言识别工具对SQL语言此法和语法解析，转化为抽象语法树（AST TREE）
-3. 对AST TREE 遍历，转化为QueryBlock查询单元（基本SQL语法组成单元，包括输入源，计算过程和输出）
-4. 对QueryBlock进行遍历，生成执行操作树（OperatorTree）

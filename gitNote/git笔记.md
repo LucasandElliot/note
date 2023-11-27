@@ -40,3 +40,16 @@
 ## git查看回退历史记录
 参考：https://blog.csdn.net/jacke121/article/details/54565222
 
+命令具体如下所示
+
+1. git log
+2. git reset --hard commit_id
+
+## git更新仓库并上传文件
+
+1. git pull origin master
+2. git push origin master
+3. git add .  /git add --all
+4. git commit -m "提交文件，即为文件提交注释"
+5. git push -u origin master(branch)
+
