@@ -32,3 +32,177 @@
 
 # Spark代码实践
 
+## 启动Spark shell命令行
+
+```
+cd /usr/local/spark
+./bin/spark-shell
+```
+
+### shell优点
+
+- Spark Shell 提供了简单的方式来学习Spark API
+
+- Spark Shell可以以实时、交互的方式来分析数据
+
+- Spark Shell支持Scala和Python
+
+操作对象为RDD,RDD可以从外部导入数据，或者由其他的RDD转换
+
+## 创建RDD（导入数据）
+
+```
+val textFile = sc.textFile("file:///usr/local/spark/README.md")  // 通过file:前缀指定读取本地文件
+
+```
+
+如果为HDFS文件系统中上传数据，即为将file改为hdfs://localhost:9000（代表的是hadoop文件系统所在的根目录**/**）即可。
+
+关键为**file://**从文件中读取数据，而且Spark RDD支持两种操作。
+
+1. 动作（action）：在数据集上进行运算，返回计算值
+2. 转换（transformation）： 基于现有的数据集**创建**一个新的数据集
+
+- ![image-20231201102803559](src/image-20231201102803559.png)
+
+## RDD.count()统计文本文件行数
+
+```
+textFile.count()
+```
+
+输出结果 Long = 95（ “Long=95”表示该文件共有95行内容）。
+
+## RDD.filter()函数，满足条件被添加
+
+```
+val linesWithSpark = textFile.filter(line => line.contains("Spark"))
+linesWithSpark.count()
+
+```
+
+存储一个新的变量，即为用RDD.filter()，在line=>line.contains()函数中不断遍历，而且line里可能是每一行遍历，如果包含了spark，那就赋值给line
+
+## RDD.contains()函数，如果包含，就返回对应数值
+
+## 链式操作
+
+Spark支持链式操作，链式操作具体如下，即为在上一函数的结果后再次运行。在filter函数之后直接再次运行count()函数。具体如图所示。
+
+```
+val linesCountWithSpark 
+= textFile.filter(line => line.contains("Spark")).count()
+```
+
+## 实现MapReduce过程（运用map()和reduce()）
+
+1. 首先使用flatMap()将每一行的文本内容通过空格进行划分为单词；
+2. 再使用map()将单词映射为(K,V)的键值对，其中K为单词，V为1；
+3. 最后使用reduceByKey()将相同单词的计数进行相加，最终得到该单词总的出现的次数。
+4. 输出结果 Long = 95（ “Long=95”表示该文件共有95行内容）
+
+```
+val wordCounts = textFile.flatMap(line => line.split(" ")).map(word => (word, 1)).reduceByKey((a, b) => a + b)
+wordCounts.collect() // 输出单词统计结果
+// Array[(String, Int)] = Array((package,1), (For,2), (Programs,1), (processing.,1), (Because,1), (The,1)...)
+
+```
+
+### Map()
+
+map(func)函数主要是将元素传递到函数中，将结果返回成一个新的输出结果。
+
+例子为`map(word => (word, 1))`，**word => (word, 1)**为一个函数，初始化切分后的词，为(key, value)格式，而且value为1。
+
+### Reduce()函数
+
+reduce()函数主要是将元素传递到函数，并输入两个参数并返回一个数值，开金额数据集中的元素。
+
+## 常见Action和Transformer函数的API（重要）
+
+![image-20231201102803559](src/image-20231201102803559.png)
+
+## 退出shell命令
+
+```
+:quit
+```
+
+## SBT simple bulid tool 打包scala命令行
+
+查看是否安装sbt，如果没有安装正常安装即可。
+
+```
+cd /usr/local/sbt
+./sbt sbtVersion
+```
+
+### 1. 创建程序根目录，并创建程序所需的文件夹结构
+
+```
+mkdir ~/sparkapp                 # 创建程序根目录
+mkdir -p ~/sparkapp/src/main/scala   # 创建程序所需的文件夹结构
+```
+
+### 2. 创建文件
+
+```
+gedit ~/sparkapp/src/main/scala/SimpleApp.scala
+```
+
+案例代码具体如下所示。
+
+```
+import org.apache.spark.SparkContext
+import org.apache.spark.SparkContext._
+import org.apache.spark.SparkConf
+ 
+object SimpleApp {
+  def main(args: Array[String]) {
+    val logFile = "file:///usr/local/spark/README.md" // 用于统计的文本文件
+    val conf = new SparkConf().setAppName("Simple Application")
+    val sc = new SparkContext(conf)
+    val logData = sc.textFile(logFile, 2).cache()
+    val numAs = logData.filter(line => line.contains("a")).count()
+    val numBs = logData.filter(line => line.contains("b")).count()
+    println("Lines with a: %s, Lines with b: %s".format(numAs, numBs))
+  }
+}
+```
+
+
+
+### 3. 创建一个simple.bat文件
+
+声明该应用程序的信息以及与Spark的依赖关系，具体内容如下。
+
+先进入对应文件路径和创建文件`gedit ~/sparkapp/simple.sbt`
+
+对应文件和内容都需要修改。
+
+```
+name := "Simple Project"
+version := "1.0"
+scalaVersion := "2.11.8"
+libraryDependencies += "org.apache.spark" %% "spark-core" % "2.1.0"
+```
+
+### 4. 运用sbt对应用程序打包
+
+打包成功后，会输出程序jar包的位置以及“Done Packaging”的提示
+
+```
+cd ~/sparkapp
+/usr/local/sbt/sbt package
+```
+
+结果如下图所示。
+
+![image-20231201112232104](src/image-20231201112232104.png)
+
+### 5. 运行sbt生成抓包结果
+
+```
+/usr/local/spark/bin/spark-submit --class "SimpleApp" ~/sparkapp/target/scala-2.11/simple-project_2.11-1.0.jar
+```
+

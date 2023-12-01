@@ -53,3 +53,12 @@
 4. git commit -m "提交文件，即为文件提交注释"
 5. git push -u origin master(branch)
 
+## Git激活虚拟环境
+
+主要要求你的venv的script文件夹需要有activate文件和activate.bat文件
+
+具体命令如下所示。打开所需要激活的文件夹。如图所示。
+
+`source activate conDigSum`
+
+![image-20231128105540044](src/image-20231128105540044.png)
