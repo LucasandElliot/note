@@ -62,3 +62,90 @@
 `source activate conDigSum`
 
 ![image-20231128105540044](src/image-20231128105540044.png)
+
+## 移除文件缓存
+
+```
+git rm --cached your_path_file
+```
+
+## 移除文件夹缓存
+
+```
+git rm --cached -r path_of_the_dir
+```
+
+## 上传大文件
+
+1. 安装lfs
+
+   ```
+   git lfs install
+   ```
+
+2. 设置需要上传的大文件后缀
+
+   ```
+   git lfs track "*.dll" 
+   ```
+
+3. 确定初始化
+
+   ```
+    git add .gitattributes
+   ```
+
+4. 随后正常push和pull即可
+
+## 合并分支
+
+1. 切换到main分支
+
+   ```
+   git checkout main
+   ```
+
+2. 将main分支代码pull拖拉下来
+
+   ```
+   git pull orgin main
+
+3. 合并master分支
+
+   ```
+   git merge master
+   ```
+
+4. 查看状态以及执行提交指令
+
+   ```
+   git status
+   ```
+
+5. push代码进入到指令中
+
+   ```
+   git push origin main
+   ```
+
+## 删除本地master分支
+
+```
+git branch -d master
+```
+
+## 删除git的commit记录
+
+1. 查看记录
+
+   ```
+   git log
+   ```
+
+2. 设置改写从xx记录之后所有记录的权限
+
+   ```
+   git rebase -i 
+   ```
+
+3. 运用vim打开commit log list，随后将pick改为drop即可，保存文件。随后再次推送
