@@ -149,3 +149,14 @@ git branch -d master
    ```
 
 3. 运用vim打开commit log list，随后将pick改为drop即可，保存文件。随后再次推送
+
+## 撤回没有被上传的commit指令
+
+```
+git reset  HEAD^
+```
+
+- --mixed， 不改动工作空间代码，但是撤销commit，以及git add 操作，一般为默认操作
+- --soft， 不删除工作空间以及代码，撤销commit。不撤销git add .
+- --hard，删除工作空间改动diam，撤销commit， 撤销git add . 这个执行之后，就恢复到了上次commit的状态
+- HEAD^是回退到上一次，HEAD~2是回退上两次（而且是会根据执行之后再次回退，即为先执行HEAD^，后执行HEAD~2一共会回退3次）
