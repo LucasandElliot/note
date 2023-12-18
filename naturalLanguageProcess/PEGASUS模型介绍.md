@@ -32,9 +32,9 @@ PEGASUS模型的预训练任务主要有两个，分别为gap句子生成和掩�
 
 ### Principle 选择方式
 
-1. 独立性选择（ind），根据选中句子和其他句子集合的ROUGE1-F1来计算，具体公式如下，最终选取前m个$s_i$句子。
-   1. 
-2. 连续性选择（seq），通过贪婪最大化选择句子集合和其他句子子集的ROUGE1-F1值选取，具体算法描述如下所示。
+1. 独立性选择（independently，ind），根据选中句子和其他句子集合的ROUGE1-F1来计算，具体公式如下，最终选取前m个$s_i$句子。
+   1. $s_i=rouge(x_i,D\setminus\{x_i\})$
+2. 连续性选择（Sequential Sentence Selection，seq），通过贪婪最大化选择句子集合和其他句子子集的ROUGE1-F1值选取，具体算法描述如下所示。
    1. ![image-20231213165342464](src/image-20231213165342464.png)
 
 在计算ROUGE1-F1的时候存在**Uniq**和**Orig**，具体差异如下图所示。
@@ -62,7 +62,7 @@ $$Rouge{-}N=\frac{\sum_{S\in ReferenceSunmaries}Count_{match}(gram_n)}{\sum_{S\i
 
 ### 结论
 
-只用MLM的效果最差，但是在100K-200K的句子中，用MLM+GSG效果较好，但是在200K之后，运用MLM效果反而下降，因此在训练大规模参数PEGASUS-large中只运用了GSG，在PERASUS-base中只运用了GSG+MLM。
+只用MLM的效果最差，但是在100K-200K的参数中，用MLM+GSG效果较好，但是在200K之后，运用MLM效果反而下降，因此在训练大规模参数PEGASUS-large中只运用了GSG，在PERASUS-base中只运用了GSG+MLM。
 
 # 参考
 
