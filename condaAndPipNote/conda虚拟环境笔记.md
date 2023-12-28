@@ -19,5 +19,12 @@ conda create --name envName python=3.x
 # 导出Conda虚拟环境
 
 ```
+conda env export > environment.yaml
+```
+
+## 根据yaml导入安装虚拟环境
+
+```
+conda env create -f environment.yaml
 ```
 

@@ -21,3 +21,9 @@ pip config set install.trusted-host mirrors.aliyun.com
 pip show packageName
 ```
 
+# 导出pip虚拟环境
+
+```
+pip freeze > requirements.txt
+```
+
