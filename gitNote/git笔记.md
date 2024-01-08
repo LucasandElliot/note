@@ -24,7 +24,9 @@
 4. git add .  /git add --all
 5. git commit -m "提交文件，即为文件提交注释"
 6. git push -u origin master(branch)
+
 ## 更新库的文件
+
 如果已经存在readme文件，提交的时候可能会有冲突，因此需要有以下两种操作
 - 舍弃线上文件，强制推送
 	1. git push origin master -f
