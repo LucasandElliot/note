@@ -7,7 +7,7 @@ conda env list
 # 移除虚拟环境
 
 ```
-conda env remove --name envrionmentName 
+conda env remove --name envrionmentName --all
 ```
 
 # 创建虚拟环境
@@ -16,7 +16,7 @@ conda env remove --name envrionmentName
 conda create --name envName python=3.x
 ```
 
-# 导出Conda虚拟环境
+# 导出conda虚拟环境
 
 ```
 conda env export > environment.yaml
