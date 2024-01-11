@@ -36,9 +36,18 @@
 ## 查询对应仓库路径
 1. git remote -v
 ## 修改远程仓库地址
-1. git remote set-url orgin <your_remote_url>
+1. git remote set-url origin <your_remote_url>
 ## 添加远程仓库
-1. git remote add orgin 项目地址(url.git 或者是git.git)
+1. git remote add origin 项目地址(url.git 或者是git.git)
+
+## 删除远程仓库地址
+
+- ```
+  git remote remove orgin（需要删除的代名词或分支）
+  ```
+
+- 
+
 ## git查看回退历史记录
 参考：https://blog.csdn.net/jacke121/article/details/54565222
 
