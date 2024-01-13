@@ -1,0 +1,20 @@
+config : usage_yaml # 这里是非嵌套形式的参数
+nest_config : # 这里是嵌套形式的参数
+    para_1: 1
+    para_2: 2
+para_list: # 读取后为列表形式
+  - 1
+  - 2
+  - 3
+para_str: "1" # 读取后为字符串形式
+para_boolen: true
+para_int: 1
+para_float: 2.0
+para_null: ~
+para_datetime: 2024-01-13
+para_time: 2001-12-14t21:59:43.10-05:00
+para_list_dict:
+  - user: '1'
+    password: '123456'
+  - user: "2"
+    password: '123'
