@@ -1,4 +1,33 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Git指令集合](#git%E6%8C%87%E4%BB%A4%E9%9B%86%E5%90%88)
+  - [参考：https://blog.csdn.net/zhezhebie/article/details/78761417](#%E5%8F%82%E8%80%83httpsblogcsdnnetzhezhebiearticledetails78761417)
+  - [设置github邮箱以及账号](#%E8%AE%BE%E7%BD%AEgithub%E9%82%AE%E7%AE%B1%E4%BB%A5%E5%8F%8A%E8%B4%A6%E5%8F%B7)
+  - [设置SSH key钥匙](#%E8%AE%BE%E7%BD%AEssh-key%E9%92%A5%E5%8C%99)
+  - [上传文件](#%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6)
+  - [更新库的文件](#%E6%9B%B4%E6%96%B0%E5%BA%93%E7%9A%84%E6%96%87%E4%BB%B6)
+  - [查询对应仓库路径](#%E6%9F%A5%E8%AF%A2%E5%AF%B9%E5%BA%94%E4%BB%93%E5%BA%93%E8%B7%AF%E5%BE%84)
+  - [修改远程仓库地址](#%E4%BF%AE%E6%94%B9%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80)
+  - [添加远程仓库](#%E6%B7%BB%E5%8A%A0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93)
+  - [删除远程仓库地址](#%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80)
+  - [git查看回退历史记录](#git%E6%9F%A5%E7%9C%8B%E5%9B%9E%E9%80%80%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95)
+  - [git更新仓库并上传文件](#git%E6%9B%B4%E6%96%B0%E4%BB%93%E5%BA%93%E5%B9%B6%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6)
+  - [Git激活虚拟环境](#git%E6%BF%80%E6%B4%BB%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83)
+  - [移除文件缓存](#%E7%A7%BB%E9%99%A4%E6%96%87%E4%BB%B6%E7%BC%93%E5%AD%98)
+  - [移除文件夹缓存](#%E7%A7%BB%E9%99%A4%E6%96%87%E4%BB%B6%E5%A4%B9%E7%BC%93%E5%AD%98)
+  - [上传大文件](#%E4%B8%8A%E4%BC%A0%E5%A4%A7%E6%96%87%E4%BB%B6)
+  - [合并分支](#%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF)
+  - [删除本地master分支](#%E5%88%A0%E9%99%A4%E6%9C%AC%E5%9C%B0master%E5%88%86%E6%94%AF)
+  - [删除git的commit记录](#%E5%88%A0%E9%99%A4git%E7%9A%84commit%E8%AE%B0%E5%BD%95)
+  - [撤回没有被上传的commit指令](#%E6%92%A4%E5%9B%9E%E6%B2%A1%E6%9C%89%E8%A2%AB%E4%B8%8A%E4%BC%A0%E7%9A%84commit%E6%8C%87%E4%BB%A4)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+[toc]
+
 # Git指令集合
+
 ## 参考：https://blog.csdn.net/zhezhebie/article/details/78761417
 
 ## 设置github邮箱以及账号

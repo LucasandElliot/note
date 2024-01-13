@@ -1,3 +1,16 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [粘贴](#%E7%B2%98%E8%B4%B4)
+- [复制](#%E5%A4%8D%E5%88%B6)
+- [退出](#%E9%80%80%E5%87%BA)
+- [帮助](#%E5%B8%AE%E5%8A%A9)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+[toc]
+
 # 粘贴
 
 - 打开vim，随后进入光标结束后的位置，输入p进行粘贴

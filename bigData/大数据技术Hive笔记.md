@@ -1,3 +1,46 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Hive](#hive)
+  - [Hive简介](#hive%E7%AE%80%E4%BB%8B)
+    - [特点](#%E7%89%B9%E7%82%B9)
+    - [优势](#%E4%BC%98%E5%8A%BF)
+  - [Hive系统架构](#hive%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84)
+    - [查询执行过程](#%E6%9F%A5%E8%AF%A2%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B)
+    - [注意事项](#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9)
+    - [Hive NoSuchMethodError报错解决](#hive-nosuchmethoderror%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3)
+    - [Hadoop与Hive版本不兼容](#hadoop%E4%B8%8Ehive%E7%89%88%E6%9C%AC%E4%B8%8D%E5%85%BC%E5%AE%B9)
+  - [Hive基本数据类型](#hive%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B)
+  - [Hive外部表，内部表](#hive%E5%A4%96%E9%83%A8%E8%A1%A8%E5%86%85%E9%83%A8%E8%A1%A8)
+    - [内部表（管理表/具有生命周期）](#%E5%86%85%E9%83%A8%E8%A1%A8%E7%AE%A1%E7%90%86%E8%A1%A8%E5%85%B7%E6%9C%89%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F)
+    - [外部表](#%E5%A4%96%E9%83%A8%E8%A1%A8)
+    - [外部表和内部表区别](#%E5%A4%96%E9%83%A8%E8%A1%A8%E5%92%8C%E5%86%85%E9%83%A8%E8%A1%A8%E5%8C%BA%E5%88%AB)
+    - [分区表](#%E5%88%86%E5%8C%BA%E8%A1%A8)
+  - [Hive方法](#hive%E6%96%B9%E6%B3%95)
+    - [启动Hive命令](#%E5%90%AF%E5%8A%A8hive%E5%91%BD%E4%BB%A4)
+    - [退出命令](#%E9%80%80%E5%87%BA%E5%91%BD%E4%BB%A4)
+    - [常见HiveQL命令](#%E5%B8%B8%E8%A7%81hiveql%E5%91%BD%E4%BB%A4)
+    - [创建、查看、删除数据库和表格](#%E5%88%9B%E5%BB%BA%E6%9F%A5%E7%9C%8B%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8C%E8%A1%A8%E6%A0%BC)
+    - [创建表](#%E5%88%9B%E5%BB%BA%E8%A1%A8)
+    - [创建视图](#%E5%88%9B%E5%BB%BA%E8%A7%86%E5%9B%BE)
+    - [删除数据库、表、视图](#%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E8%A7%86%E5%9B%BE)
+      - [删除表](#%E5%88%A0%E9%99%A4%E8%A1%A8)
+      - [删除视图](#%E5%88%A0%E9%99%A4%E8%A7%86%E5%9B%BE)
+    - [修改数据库、表格、视图](#%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E6%A0%BC%E8%A7%86%E5%9B%BE)
+      - [修改数据库](#%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE%E5%BA%93)
+      - [修改表](#%E4%BF%AE%E6%94%B9%E8%A1%A8)
+      - [修改视图](#%E4%BF%AE%E6%94%B9%E8%A7%86%E5%9B%BE)
+    - [查看视图数据库、表格、视图](#%E6%9F%A5%E7%9C%8B%E8%A7%86%E5%9B%BE%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E6%A0%BC%E8%A7%86%E5%9B%BE)
+      - [show命令查看数据库](#show%E5%91%BD%E4%BB%A4%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE%E5%BA%93)
+      - [show命令查看表和视图](#show%E5%91%BD%E4%BB%A4%E6%9F%A5%E7%9C%8B%E8%A1%A8%E5%92%8C%E8%A7%86%E5%9B%BE)
+      - [describe命令描述数据库、表、视图](#describe%E5%91%BD%E4%BB%A4%E6%8F%8F%E8%BF%B0%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E8%A7%86%E5%9B%BE)
+    - [load命令装载数据](#load%E5%91%BD%E4%BB%A4%E8%A3%85%E8%BD%BD%E6%95%B0%E6%8D%AE)
+    - [insert插入命令](#insert%E6%8F%92%E5%85%A5%E5%91%BD%E4%BB%A4)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+[toc]
+
 # Hive
 
 ## Hive简介

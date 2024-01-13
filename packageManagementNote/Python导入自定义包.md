@@ -1,3 +1,12 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [执行py文件与package属于同一层级](#%E6%89%A7%E8%A1%8Cpy%E6%96%87%E4%BB%B6%E4%B8%8Epackage%E5%B1%9E%E4%BA%8E%E5%90%8C%E4%B8%80%E5%B1%82%E7%BA%A7)
+- [执行py文件与package不在一个层级中](#%E6%89%A7%E8%A1%8Cpy%E6%96%87%E4%BB%B6%E4%B8%8Epackage%E4%B8%8D%E5%9C%A8%E4%B8%80%E4%B8%AA%E5%B1%82%E7%BA%A7%E4%B8%AD)
+- [直接进入Python安装路径直接创建pth文件，放置包路径](#%E7%9B%B4%E6%8E%A5%E8%BF%9B%E5%85%A5python%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84%E7%9B%B4%E6%8E%A5%E5%88%9B%E5%BB%BApth%E6%96%87%E4%BB%B6%E6%94%BE%E7%BD%AE%E5%8C%85%E8%B7%AF%E5%BE%84)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # 执行py文件与package属于同一层级
 
 1. 需要创建一个文件夹，而且需要包含有\__init__.py文件

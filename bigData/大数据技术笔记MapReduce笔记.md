@@ -1,3 +1,19 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [大数据技术笔记](#%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0)
+  - [MapReduce](#mapreduce)
+    - [MapReduce模型简介](#mapreduce%E6%A8%A1%E5%9E%8B%E7%AE%80%E4%BB%8B)
+    - [MapReduce应用](#mapreduce%E5%BA%94%E7%94%A8)
+    - [MapReduce代码编写（以词频统计为例）](#mapreduce%E4%BB%A3%E7%A0%81%E7%BC%96%E5%86%99%E4%BB%A5%E8%AF%8D%E9%A2%91%E7%BB%9F%E8%AE%A1%E4%B8%BA%E4%BE%8B)
+    - [MapReduce命令行编译打包代码以及运行jar可执行文件](#mapreduce%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%BC%96%E8%AF%91%E6%89%93%E5%8C%85%E4%BB%A3%E7%A0%81%E4%BB%A5%E5%8F%8A%E8%BF%90%E8%A1%8Cjar%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6)
+      - [命令行编译](#%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%BC%96%E8%AF%91)
+      - [IDE执行编译程序](#ide%E6%89%A7%E8%A1%8C%E7%BC%96%E8%AF%91%E7%A8%8B%E5%BA%8F)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+[toc]
+
 # 大数据技术笔记
 
 ## MapReduce

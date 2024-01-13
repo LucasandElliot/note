@@ -1,3 +1,18 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [PEGASUS介绍](#pegasus%E4%BB%8B%E7%BB%8D)
+  - [概述](#%E6%A6%82%E8%BF%B0)
+  - [模型框架图示](#%E6%A8%A1%E5%9E%8B%E6%A1%86%E6%9E%B6%E5%9B%BE%E7%A4%BA)
+- [Gap Sentence Generation（GSG）](#gap-sentence-generationgsg)
+    - [Principle 选择方式](#principle-%E9%80%89%E6%8B%A9%E6%96%B9%E5%BC%8F)
+    - [结论](#%E7%BB%93%E8%AE%BA)
+  - [MLM掩码预测任务选择](#mlm%E6%8E%A9%E7%A0%81%E9%A2%84%E6%B5%8B%E4%BB%BB%E5%8A%A1%E9%80%89%E6%8B%A9)
+    - [结论](#%E7%BB%93%E8%AE%BA-1)
+- [参考](#%E5%8F%82%E8%80%83)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # PEGASUS介绍
 
 ## 概述

@@ -1,3 +1,13 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [jieba分词简介](#jieba%E5%88%86%E8%AF%8D%E7%AE%80%E4%BB%8B)
+- [jieba分词原理说明](#jieba%E5%88%86%E8%AF%8D%E5%8E%9F%E7%90%86%E8%AF%B4%E6%98%8E)
+  - [例子](#%E4%BE%8B%E5%AD%90)
+- [参考](#%E5%8F%82%E8%80%83)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # jieba分词简介
 
 jieba分词为一个中文文本处理的开源分词工具，是一个基于统计和词典的分词工具，具有简单易用，可拓展性强等特点，被广泛应用于中文自然语言处理任务中如句子分词、信息检索等领域。jieba分词主要支持三种分词形式，分别为精确模式将句子精确分开，一般用于文本分析；全模式将句子所有可能成词构建成一个集合，速度较快，不适用于文本分析；搜索引擎模式，在精确模式的前提下，对场次再次切分，获取细粒度更高的分词结果，提高召回率。此外，jieba分词支持自定义词典，可以针对不同领域，获取多层次分词结果。jieba分词运用了基于前缀词典的动态规划分词算法和并行分词，具有较高的分词速度，适用于大规模文本处理。

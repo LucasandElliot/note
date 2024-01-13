@@ -1,4 +1,31 @@
-# 云计算概论   笔记
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [云计算概论Pig笔记](#%E4%BA%91%E8%AE%A1%E7%AE%97%E6%A6%82%E8%AE%BApig%E7%AC%94%E8%AE%B0)
+  - [Pig命令](#pig%E5%91%BD%E4%BB%A4)
+    - [case  when then 命令（条件分支语句）](#case--when-then-%E5%91%BD%E4%BB%A4%E6%9D%A1%E4%BB%B6%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5)
+    - [sum命令，求取每列的均值](#sum%E5%91%BD%E4%BB%A4%E6%B1%82%E5%8F%96%E6%AF%8F%E5%88%97%E7%9A%84%E5%9D%87%E5%80%BC)
+    - [AVG()命令,求取某一列的平均值](#avg%E5%91%BD%E4%BB%A4%E6%B1%82%E5%8F%96%E6%9F%90%E4%B8%80%E5%88%97%E7%9A%84%E5%B9%B3%E5%9D%87%E5%80%BC)
+    - [类型强制转换](#%E7%B1%BB%E5%9E%8B%E5%BC%BA%E5%88%B6%E8%BD%AC%E6%8D%A2)
+    - [LIMIT TABLE 5命令，获取前N行输出](#limit-table-5%E5%91%BD%E4%BB%A4%E8%8E%B7%E5%8F%96%E5%89%8Dn%E8%A1%8C%E8%BE%93%E5%87%BA)
+    - [flatten 命令和tokenize命令](#flatten-%E5%91%BD%E4%BB%A4%E5%92%8Ctokenize%E5%91%BD%E4%BB%A4)
+    - [replace替换命令](#replace%E6%9B%BF%E6%8D%A2%E5%91%BD%E4%BB%A4)
+    - [order排序命令](#order%E6%8E%92%E5%BA%8F%E5%91%BD%E4%BB%A4)
+    - [Pig Script](#pig-script)
+      - [在linux下创建student.pig文件](#%E5%9C%A8linux%E4%B8%8B%E5%88%9B%E5%BB%BAstudentpig%E6%96%87%E4%BB%B6)
+      - [在Pig下执行pig脚本](#%E5%9C%A8pig%E4%B8%8B%E6%89%A7%E8%A1%8Cpig%E8%84%9A%E6%9C%AC)
+    - [设置并行度](#%E8%AE%BE%E7%BD%AE%E5%B9%B6%E8%A1%8C%E5%BA%A6)
+    - [设置Macro函数](#%E8%AE%BE%E7%BD%AEmacro%E5%87%BD%E6%95%B0)
+    - [describe 描述表格信息](#describe-%E6%8F%8F%E8%BF%B0%E8%A1%A8%E6%A0%BC%E4%BF%A1%E6%81%AF)
+    - [EXPLAIN 命令生成执行信息](#explain-%E5%91%BD%E4%BB%A4%E7%94%9F%E6%88%90%E6%89%A7%E8%A1%8C%E4%BF%A1%E6%81%AF)
+    - [ILLUSTRATE命令说明表格信息流来源](#illustrate%E5%91%BD%E4%BB%A4%E8%AF%B4%E6%98%8E%E8%A1%A8%E6%A0%BC%E4%BF%A1%E6%81%AF%E6%B5%81%E6%9D%A5%E6%BA%90)
+    - [JOIN命令，连接表格](#join%E5%91%BD%E4%BB%A4%E8%BF%9E%E6%8E%A5%E8%A1%A8%E6%A0%BC)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+[toc]
+
+# 云计算概论Pig笔记
 
 ## Pig命令
 

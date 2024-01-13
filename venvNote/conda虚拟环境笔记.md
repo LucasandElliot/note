@@ -1,3 +1,17 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [查看虚拟环境](#%E6%9F%A5%E7%9C%8B%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83)
+- [移除虚拟环境](#%E7%A7%BB%E9%99%A4%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83)
+- [创建虚拟环境](#%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83)
+- [导出conda虚拟环境](#%E5%AF%BC%E5%87%BAconda%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83)
+- [根据yaml导入安装虚拟环境](#%E6%A0%B9%E6%8D%AEyaml%E5%AF%BC%E5%85%A5%E5%AE%89%E8%A3%85%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83)
+- [conda添加镜像源](#conda%E6%B7%BB%E5%8A%A0%E9%95%9C%E5%83%8F%E6%BA%90)
+- [conda 删除镜像源](#conda-%E5%88%A0%E9%99%A4%E9%95%9C%E5%83%8F%E6%BA%90)
+- [conda 查看镜像源](#conda-%E6%9F%A5%E7%9C%8B%E9%95%9C%E5%83%8F%E6%BA%90)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # 查看虚拟环境
 
 ```

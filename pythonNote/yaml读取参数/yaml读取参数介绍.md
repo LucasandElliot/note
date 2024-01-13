@@ -1,3 +1,15 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [安装Yaml第三方库](#%E5%AE%89%E8%A3%85yaml%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93)
+- [yaml文件介绍](#yaml%E6%96%87%E4%BB%B6%E4%BB%8B%E7%BB%8D)
+  - [注意事项](#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9)
+  - [文件案例](#%E6%96%87%E4%BB%B6%E6%A1%88%E4%BE%8B)
+- [Python读取yaml文件](#python%E8%AF%BB%E5%8F%96yaml%E6%96%87%E4%BB%B6)
+- [参考](#%E5%8F%82%E8%80%83)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # 安装Yaml第三方库
 
 - 主要是介绍对应的命令如下所示【以下命令都可，选一个即可】

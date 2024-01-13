@@ -1,3 +1,15 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [查看linux版本](#%E6%9F%A5%E7%9C%8Blinux%E7%89%88%E6%9C%AC)
+- [查看架构信息](#%E6%9F%A5%E7%9C%8B%E6%9E%B6%E6%9E%84%E4%BF%A1%E6%81%AF)
+- [更新conf文件，即为解决DNS映射](#%E6%9B%B4%E6%96%B0conf%E6%96%87%E4%BB%B6%E5%8D%B3%E4%B8%BA%E8%A7%A3%E5%86%B3dns%E6%98%A0%E5%B0%84)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+[toc]
+
 # 查看linux版本
 
 - lsb_release -a

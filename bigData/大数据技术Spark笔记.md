@@ -1,3 +1,34 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Spark特点](#spark%E7%89%B9%E7%82%B9)
+- [Scala介绍](#scala%E4%BB%8B%E7%BB%8D)
+- [Spark与Hadoop对比优势](#spark%E4%B8%8Ehadoop%E5%AF%B9%E6%AF%94%E4%BC%98%E5%8A%BF)
+- [Spark运行架构](#spark%E8%BF%90%E8%A1%8C%E6%9E%B6%E6%9E%84)
+- [Spark代码实践](#spark%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B5)
+  - [启动Spark shell命令行](#%E5%90%AF%E5%8A%A8spark-shell%E5%91%BD%E4%BB%A4%E8%A1%8C)
+    - [shell优点](#shell%E4%BC%98%E7%82%B9)
+  - [创建RDD（导入数据）](#%E5%88%9B%E5%BB%BArdd%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE)
+  - [RDD.count()统计文本文件行数](#rddcount%E7%BB%9F%E8%AE%A1%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E8%A1%8C%E6%95%B0)
+  - [RDD.filter()函数，满足条件被添加](#rddfilter%E5%87%BD%E6%95%B0%E6%BB%A1%E8%B6%B3%E6%9D%A1%E4%BB%B6%E8%A2%AB%E6%B7%BB%E5%8A%A0)
+  - [RDD.contains()函数，如果包含，就返回对应数值](#rddcontains%E5%87%BD%E6%95%B0%E5%A6%82%E6%9E%9C%E5%8C%85%E5%90%AB%E5%B0%B1%E8%BF%94%E5%9B%9E%E5%AF%B9%E5%BA%94%E6%95%B0%E5%80%BC)
+  - [链式操作](#%E9%93%BE%E5%BC%8F%E6%93%8D%E4%BD%9C)
+  - [实现MapReduce过程（运用map()和reduce()）](#%E5%AE%9E%E7%8E%B0mapreduce%E8%BF%87%E7%A8%8B%E8%BF%90%E7%94%A8map%E5%92%8Creduce)
+    - [Map()](#map)
+    - [Reduce()函数](#reduce%E5%87%BD%E6%95%B0)
+  - [常见Action和Transformer函数的API（重要）](#%E5%B8%B8%E8%A7%81action%E5%92%8Ctransformer%E5%87%BD%E6%95%B0%E7%9A%84api%E9%87%8D%E8%A6%81)
+  - [退出shell命令](#%E9%80%80%E5%87%BAshell%E5%91%BD%E4%BB%A4)
+  - [SBT simple bulid tool 打包scala命令行](#sbt-simple-bulid-tool-%E6%89%93%E5%8C%85scala%E5%91%BD%E4%BB%A4%E8%A1%8C)
+    - [1. 创建程序根目录，并创建程序所需的文件夹结构](#1-%E5%88%9B%E5%BB%BA%E7%A8%8B%E5%BA%8F%E6%A0%B9%E7%9B%AE%E5%BD%95%E5%B9%B6%E5%88%9B%E5%BB%BA%E7%A8%8B%E5%BA%8F%E6%89%80%E9%9C%80%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E7%BB%93%E6%9E%84)
+    - [2. 创建文件](#2-%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6)
+    - [3. 创建一个simple.bat文件](#3-%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAsimplebat%E6%96%87%E4%BB%B6)
+    - [4. 运用sbt对应用程序打包](#4-%E8%BF%90%E7%94%A8sbt%E5%AF%B9%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85)
+    - [5. 运行sbt生成抓包结果](#5-%E8%BF%90%E8%A1%8Csbt%E7%94%9F%E6%88%90%E6%8A%93%E5%8C%85%E7%BB%93%E6%9E%9C)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+[toc]
+
 # Spark特点
 
 - 运行速度快：使用DAG执行引擎以支持循环数据流与内存计算
