@@ -1,6 +1,7 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
+
 - [Hive](#hive)
   - [Hive简介](#hive%E7%AE%80%E4%BB%8B)
     - [特点](#%E7%89%B9%E7%82%B9)
@@ -102,15 +103,12 @@
 ### Hive NoSuchMethodError报错解决
 
 1. 复制高版本jar包到hive中
-   -  cp /usr/local/hadoop/share/hadoop/common/lib/guava-11.0.2.jar /usr/local/hive/lib
 2. 删除低版本jar包
-   - rm /usr/local/hive/lib/guava-14.0.1.jar
 
 3. 复制保留jar包到原文件夹
    -  cp ~/Downloads/guava-14.0.1.jar /usr/local/hive/lib/
 
 4. 删除高版本jar包（hive）
-   - rm /usr/local/hive/lib/guava-27.0-jre.jar
 
 ### Hadoop与Hive版本不兼容
 

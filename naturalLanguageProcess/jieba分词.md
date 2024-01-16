@@ -1,6 +1,7 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
+
 - [jieba分词简介](#jieba%E5%88%86%E8%AF%8D%E7%AE%80%E4%BB%8B)
 - [jieba分词原理说明](#jieba%E5%88%86%E8%AF%8D%E5%8E%9F%E7%90%86%E8%AF%B4%E6%98%8E)
   - [例子](#%E4%BE%8B%E5%AD%90)

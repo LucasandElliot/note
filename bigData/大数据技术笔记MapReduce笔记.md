@@ -1,6 +1,7 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
+
 - [大数据技术笔记](#%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0)
   - [MapReduce](#mapreduce)
     - [MapReduce模型简介](#mapreduce%E6%A8%A1%E5%9E%8B%E7%AE%80%E4%BB%8B)
