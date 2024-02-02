@@ -19,7 +19,7 @@
 - -h，帮助操作，一般用显示帮助信息，如在加入参数的时候一些定义以及显示
 - 传入参数方法，为`parser.add_argument('--integers', type=str, help='传入的数字', default='1', required=True, nargs='+')`
   1. --integers， 分为可选参数--和普通参数，可选参数的意义在于保持了代码的逻辑性，可以自定义输入参数顺序，而且在调用的时候只需要args.integers即可【以上述代码为例，省略--即为实际参数】
-  2. type，指定参数类型，可以为int，str，float，list，dict等类型
+  2. type，指定参数类型，可以为int，str，float，list，dict等类型，**传入为bool类型**的时候，需要注意是因为无论传入什么数值**都会是True**，所以需要用dest和action处理
   3. help，为在输入-h参数的时候，显示的信息，一般用于说明介绍参数
   4. default，即为设置默认参数，一般与type类型一直
   5. required为必须参数，required=True即为输入进入命令行的时候必须带入该参数
@@ -28,6 +28,8 @@
      2. '?'为参数可以设置0-1个
      3. "+"可以设置为1-n个
      4. 【具体跟正则表达式匹配类似】
+  7. dest，这里是可以设置为你所需要放置的参数如para1变量，即为最后在args类中的namespace中会赋值给para1，一般配合与action参数一起使用
+  8. action，一般为设置为布尔类型，即为store_true和store_false，分别为赋值为真和假
 
 # argparseExample.py简单示例
 
@@ -44,12 +46,14 @@
   parser.add_argument('--parameterTwo', type=int, nargs='+', help='参数2', default=2)
   parser.add_argument('--parameterThree', type=int, nargs='?', help='参数2', default=3, required=True)
   args = parser.parse_args()
+  # 默认为真，即为最后namespace最终出现为args.flag变量，而且默认如果出现为赋值为假，默认为真
+  parser.add_argument('--is_flag', dest='flag', action='store_false', default=True)
   # 获得传入的参数
   print(args)
   # 计算结果
   print(args.parameterThree + args.parameterTwo + args.parameterOne)
   ```
-
+  
 - 在命令行中输入`python argparseExample.py --parameterThree 1`即可
 
 # 参考

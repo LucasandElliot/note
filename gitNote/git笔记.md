@@ -27,17 +27,17 @@
 
 [toc]
 
-# Git指令集合
+# 参考
 
-## 参考：https://blog.csdn.net/zhezhebie/article/details/78761417
+- https://blog.csdn.net/zhezhebie/article/details/78761417
 
-## 设置github邮箱以及账号
+# 设置github邮箱以及账号
 
 1.  git config --globaluser.name"LucasandElliot"
 
 2. git config --globaluser.email"xxxxxx@xx.com"
 
-##  设置SSH key钥匙
+#  设置SSH key钥匙
 检查是否已经生成密钥
 1. cd ~/.ssh
 如果返回了三个文件证明已经生成了密钥
@@ -46,7 +46,7 @@
 随后直接回车即可，即为默认路径以及默认没有密码登录
 查看 SSH key的输出，复制输出到剪贴板，随后打开github的setting，检索是否有SSH，随后创建即可
 1. cat ~/.ssh/id_rsa.pub
-## 上传文件
+# 上传文件
 进入对应文件夹，随后初始化git文件夹，执行对应指令，但需要先关联仓库地址(这里需要为Https形式文件/git后缀文件)
 1. cd C:/Users/lucus/Desktop/Typora_note
 2. git init
@@ -55,7 +55,7 @@
 5. git commit -m "提交文件，即为文件提交注释"
 6. git push -u origin master(branch)
 
-## 更新库的文件
+# 更新库的文件
 
 如果已经存在readme文件，提交的时候可能会有冲突，因此需要有以下两种操作
 - 舍弃线上文件，强制推送
@@ -63,22 +63,22 @@
 - 保留线上文件，用于合并远程仓库（通常是命名为 "origin"）的 "master" 分支拉取最新的更新到本地仓库。
 	1. git pull origin master
 	2. git push origin master
-## 查询对应仓库路径
+# 查询对应仓库路径
 1. git remote -v
-## 修改远程仓库地址
+# 修改远程仓库地址
 1. git remote set-url origin <your_remote_url>
 
-## 添加远程仓库
+# 添加远程仓库
 
 1. git remote add origin 项目地址(url.git 或者是git.git)如【 git@github.com:LucasandElliot/note.git】
 
-## 删除远程仓库地址
+# 删除远程仓库地址
 
 - ```
   git remote remove orgin（需要删除的代名词或分支）
   ```
 
-## git查看回退历史记录
+# git查看回退历史记录
 
 参考：https://blog.csdn.net/jacke121/article/details/54565222
 
@@ -87,7 +87,7 @@
 1. git log
 2. git reset --hard commit_id
 
-## git更新仓库并上传文件
+# git更新仓库并上传文件
 
 1. git pull origin master
 2. git push origin master
@@ -95,7 +95,7 @@
 4. git commit -m "提交文件，即为文件提交注释"
 5. git push -u origin master(branch)
 
-## Git激活虚拟环境
+# Git激活虚拟环境
 
 主要要求你的venv的script文件夹需要有activate文件和activate.bat文件
 
@@ -105,19 +105,19 @@
 
 ![image-20231128105540044](src/image-20231128105540044.png)
 
-## 移除文件缓存
+# 移除文件缓存
 
 ```
 git rm --cached your_path_file
 ```
 
-## 移除文件夹缓存
+# 移除文件夹缓存
 
 ```
 git rm --cached -r path_of_the_dir
 ```
 
-## 上传大文件
+# 上传大文件
 
 1. 安装lfs
 
@@ -139,7 +139,7 @@ git rm --cached -r path_of_the_dir
 
 4. 随后正常push和pull即可
 
-## 合并分支
+# 合并分支
 
 1. 切换到main分支
 
@@ -170,13 +170,13 @@ git rm --cached -r path_of_the_dir
    git push origin main
    ```
 
-## 删除本地master分支
+# 删除本地master分支
 
 ```
 git branch -d master
 ```
 
-## 删除git的commit记录
+# 删除git的commit记录
 
 1. 查看记录
 
@@ -192,7 +192,7 @@ git branch -d master
 
 3. 运用vim打开commit log list，随后将pick改为drop即可，保存文件。随后再次推送
 
-## 撤回没有被上传的commit指令
+# 撤回没有被上传的commit指令
 
 ```
 git reset  HEAD^
@@ -202,3 +202,40 @@ git reset  HEAD^
 - --soft， 不删除工作空间以及代码，撤销commit。不撤销git add .
 - --hard，删除工作空间改动diam，撤销commit， 撤销git add . 这个执行之后，就恢复到了上次commit的状态
 - HEAD^是回退到上一次，HEAD~2是回退上两次（而且是会根据执行之后再次回退，即为先执行HEAD^，后执行HEAD~2一共会回退3次）
+
+# Git 合并分支
+
+- 具体常见如下，假设有master和change分支，从同一个节点分裂，随后各自进行了两次提交commit以及修改。随后即为change想合并到master分支中，但是直接git commit和git push是不成功的，因为分支冲突了【master以及修改】
+  - 原来开始master和change图示【相同颜色为同一分支内容】
+    - ![image-20240122230337824](src/image-20240122230337824.png)
+
+- git merge操作【历史记录较多】
+
+  - git merge实际上为即为先让git按照master和change分支提交顺序排列，分别到达各自顶端，随后执行merge commit具体如下图所示，git log命令查看的时候会存在多个提交记录，而且最终合并到feature分支中
+
+  - 代码
+
+    - ```
+      git checkout change
+      git pull origin master # 等于 git fetch origin master + git merge master change
+      ```
+
+  - 具体如下图所示
+
+    - ![image-20240122230321936](src/image-20240122230321936.png)
+
+- git rebase操作【历史记录较少】
+
+  - git rebase实际上先移动到master顶端，即为更新所有change分支内的master分支内容，即为先更新master分支内容，随后对change分支直接移动到master分支顶端，在执行change分支内容，因此，最终合并记录较少
+
+    - 具体如下图所示
+
+      - ![image-20240122230224061](src/image-20240122230224061.png)
+
+    - 代码
+
+      - ```
+        git checkout feature
+        git pull --rebase origin master # 等于git fetch origin master + git rebase master
+        ```
+
