@@ -1,3 +1,11 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [server certificate verification failed. CAfile etcsslcertsca-certificates.crt CRLfile none报错](#server-certificate-verification-failed-cafile-etcsslcertsca-certificatescrt-crlfile-none%E6%8A%A5%E9%94%99)
+- [参考](#%E5%8F%82%E8%80%83)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 [toc]
 
 # server certificate verification failed. CAfile etcsslcertsca-certificates.crt CRLfile none报错

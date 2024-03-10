@@ -1,7 +1,6 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-
 - [查看虚拟环境](#%E6%9F%A5%E7%9C%8B%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83)
 - [移除虚拟环境](#%E7%A7%BB%E9%99%A4%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83)
 - [创建虚拟环境](#%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83)
@@ -22,7 +21,7 @@ conda env list
 # 移除虚拟环境
 
 ```
-conda env remove --name envrionmentName --all
+conda remove --name envrionmentName --all
 ```
 
 # 创建虚拟环境

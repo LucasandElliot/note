@@ -1,7 +1,6 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-
 - [Hive](#hive)
   - [Hive简介](#hive%E7%AE%80%E4%BB%8B)
     - [特点](#%E7%89%B9%E7%82%B9)

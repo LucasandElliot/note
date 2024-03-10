@@ -1,7 +1,6 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-
 - [云计算概论Pig笔记](#%E4%BA%91%E8%AE%A1%E7%AE%97%E6%A6%82%E8%AE%BApig%E7%AC%94%E8%AE%B0)
   - [Pig命令](#pig%E5%91%BD%E4%BB%A4)
     - [case  when then 命令（条件分支语句）](#case--when-then-%E5%91%BD%E4%BB%A4%E6%9D%A1%E4%BB%B6%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5)

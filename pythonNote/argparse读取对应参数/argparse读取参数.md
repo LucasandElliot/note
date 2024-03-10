@@ -1,7 +1,6 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-
 - [用法](#%E7%94%A8%E6%B3%95)
 - [argparseExample.py简单示例](#argparseexamplepy%E7%AE%80%E5%8D%95%E7%A4%BA%E4%BE%8B)
 - [参考](#%E5%8F%82%E8%80%83)
