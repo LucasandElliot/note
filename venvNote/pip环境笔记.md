@@ -37,6 +37,14 @@ pip show packageName
 pip freeze > requirements.txt
 ```
 
+- 运用上述命令会发生@file等问题，因此我们采用下述方案
+
+```
+pip list --format=freeze > requirements.txt
+```
+
+
+
 # pip更换镜像源
 
 具体也可以为直接找到.condarc文件，具体文件路径为分win和linux

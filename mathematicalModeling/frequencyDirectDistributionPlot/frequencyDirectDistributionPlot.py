@@ -3,12 +3,13 @@
 # @Time : 2023/12/22 9:27
 # @Author : Lucas
 # @File : frequencyDirectDistributionPlot.py
+from collections import Counter
 import pandas as pd
 from scipy.stats import norm
 from sklearn.preprocessing import MinMaxScaler,StandardScaler
 import matplotlib.pyplot as plt
 plt.rcParams['font.sans-serif'] = ['SimHei']  # 可以正常显示中文
-plt.rcParams['axes.unicode_minus']=False # 用来正常显示负号
+plt.rcParams['axes.unicode_minus'] = False # 用来正常显示负号
 plt.tight_layout() # 为了正常显示一些图表被遮盖或者不完全显示的问题
 import random
 import numpy as np
@@ -28,7 +29,7 @@ class frequencyDirectDistribution:
         # counts, bins, _ = plt.hist(content[name].tolist(), bins=60, edgecolor='blue', density=True)
         data = list(self.data)
         name = self.column_name
-        if isinstance(data[0], (int, float)):
+        if isinstance(data[0], (float)):
             if sclaer_flag:
                 # 数据标准化处理
                 standard_data = np.array(data)
@@ -43,6 +44,15 @@ class frequencyDirectDistribution:
             y = norm.pdf(bins, mu, sigma)
             # 绘制y的曲线
             ax.plot(bins, y, 'r--')
+        elif isinstance(data[0], (int)):
+            frequency_counter = Counter(data)
+            # draw the Discrete variables frequency
+            plt.bar(frequency_counter.keys(), frequency_counter.values(), edgecolor="black")
+            values = list(frequency_counter.keys())
+            frequencys = list(frequency_counter.values())
+            # 在每个条形上显示数值
+            for i, value in enumerate(values):
+                plt.text(value, frequencys[i] + 0.1, str(frequencys[i]), ha='center', va='bottom')
         else:
             # 如果属于统计类型，直接绘制频数直方图
             counts, bins, _ = plt.hist(data, bins=60, edgecolor='blue')
