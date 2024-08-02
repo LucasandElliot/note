@@ -13,7 +13,7 @@
 2. 随后在包里面放置你所需要的文件类型
 3. 在其他文件调用的时候统一是from xx import xx，或者是import xxx.xxx
 4. 具体文件目录树形式如下所示
-   1. ![image-20240110113042640](C:/Users/lucus/AppData/Roaming/Typora/typora-user-images/image-20240110113042640.png)
+   1. ![image-20240110113042640](src/image-20240110113042640.png)
 
 # 执行py文件与package不在一个层级中
 
@@ -32,7 +32,7 @@
 
 3. 具体目录如下所示
 
-   1. ![image-20240110113358425](C:/Users/lucus/AppData/Roaming/Typora/typora-user-images/image-20240110113358425.png)
+   1. ![image-20240110113358425](src/image-20240110113358425.png)
 
 # 直接进入Python安装路径直接创建pth文件，放置包路径
 
